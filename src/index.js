@@ -25,7 +25,7 @@ class App extends React.Component{
 
 		this.state = {
 			bText : "Start",
-			wpm : 150,
+			wpm : 200,
 			interval : null,
 			text : props.text.split(" "),
 			highlight : 0
@@ -90,4 +90,4 @@ class App extends React.Component{
 	}
 }
 
-ReactDOM.render(<App text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum nisi et sodales hendrerit. Etiam at fringilla tortor."/>, document.getElementById("root"));
+ReactDOM.render(<App text = "Somebody once told me the world was gonna roll me. I aint the sharpest tool in the shed. She was looking kinda dumb with her finger and her thumb and the shape of an L on her forehead."/>, document.getElementById("root"));
