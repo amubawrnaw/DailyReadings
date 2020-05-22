@@ -24,3 +24,9 @@ input{
 		margin-right:0;
 	}	
 }
+p{
+	opacity:60%;
+}
+p:hover{
+	opacity:100%;
+}

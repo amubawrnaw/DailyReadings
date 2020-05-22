@@ -19,6 +19,14 @@ function WPMField(props){
 	)
 }
 
+function UserInputs(props){
+	return (
+		<div>
+			
+		</div>
+	)
+}
+
 class App extends React.Component{
 	constructor(props){
 		super(props);
@@ -82,8 +90,10 @@ class App extends React.Component{
 			<br/>
 			<StartBtn name = {this.state.bText} onClick = {this.btnPress}/>
 			<br/>
+			</div>
 			<h1>{this.state.text[this.state.highlight]}</h1>
 			<br/>
+
 			<p>{this.state.text.map(this.highlightWord)}</p>
 			</div>
 		)
