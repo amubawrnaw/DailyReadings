@@ -30,3 +30,8 @@ p{
 p:hover{
 	opacity:100%;
 }
+.startbtn{
+	width:30vw;
+	height:40px;
+	margin-bottom:10px;
+}

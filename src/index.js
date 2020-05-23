@@ -4,7 +4,7 @@ import './index.css';
 
 function StartBtn(props){
 	return (
-		<button onClick = {props.onClick}>
+		<button className = "startbtn" onClick = {props.onClick}>
 		{props.name}
 		</button>
 	)
@@ -22,7 +22,19 @@ function WPMField(props){
 function UserInputs(props){
 	return (
 		<div>
-			
+			<WPMField value = {props.wpm} onChange = {props.wpmChange}/>
+			<br/>
+			<br/>
+			<StartBtn className = "startbtn" name = {props.bText} onClick = {props.btnPress}/>
+			<br/>
+			<label>
+				<input type = "radio" name = "textsrc" checked disabled = {props.bText === "End"}/>
+				Daily Readings
+			</label>
+			<label>
+				<input type = "radio" name = "textsrc" disabled = {props.bText === "End"}/>
+				Custom Text
+			</label>
 		</div>
 	)
 }
@@ -85,16 +97,15 @@ class App extends React.Component{
 	render(){
 		return (
 			<div>
-			<WPMField value = {this.state.wpm} onChange = {this.wpmChange}/>
-			<br/>
-			<br/>
-			<StartBtn name = {this.state.bText} onClick = {this.btnPress}/>
-			<br/>
-			</div>
-			<h1>{this.state.text[this.state.highlight]}</h1>
-			<br/>
+				<UserInputs wpm = {this.state.wpm}
+						wpmChange = {this.wpmChange}
+						bText = {this.state.bText}
+						btnPress = {this.btnPress}
+				/>
+				<h1>{this.state.text[this.state.highlight]}</h1>
+				<br/>
 
-			<p>{this.state.text.map(this.highlightWord)}</p>
+				<p>{this.state.text.map(this.highlightWord)}</p>
 			</div>
 		)
 	}
